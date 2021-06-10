@@ -1,22 +1,18 @@
 Performance, Load and Unicode Test Drive  
 =======================================================================================================================
 **Certifies the performance, load and UNICODE capability of the SAP Camel Component running in a Fuse camel runtime.**  
-![SAP Certification](../sap_tool_suite.png "SAP Tool Suite")
 
 * * *
-Author: William Collins - Fuse Team  
 Summary: SAP requires to include the performance load testing during Test Drive. These performance load test cases will determine if the product can handle a pre-defined number of users or amount of data without running out of resources or having transactions suffer excessive delay. .       
-Target Product: Fuse  
-Source: <http://github.com/fusesource/sap-certification-tests/>  
-
+Target Product: Red Hat Fuse  
 * * *
 
 What is it?  
 -----------  
 
-This project implements and performs the certification tests specified in Sections 8.3 and 8.4 of the BOR API Test Product Profile for JBoss Fuse. These tests certify the performance, load and UNICODE capabilities of the SAP Camel Component.    
+This project implements and performs the certification tests specified in Sections 8.3 and 8.4 of the BOR API Test Product Profile for Red Hat Fuse. These tests certify the performance, load and UNICODE capabilities of the SAP Camel Component.    
 
-In this certification test, 21 identical routes are started. Each route calls the RFC\_READ\_TABLE remote function module in SAP. These routes log and store in two time-stamped files (`request-<time-stamp>.xml` and `response-<time-stamp>.xml`) the request sent and the response received in their remote function call. The time-stamp indicates when the request was sent or when the response was received. In addition, each route posts in a time-stamped text file (`result-<time-stamp>.txt`) the contents of the RFCDOC table returned in their call. Each route stores these files in a route specific sub-directory of the JBoss Fuse installation's `work` directory. A routes sub-directory is named `TEST_8_3-4_RFC_READ_TABLE-<n>` where `<n>` indicates the instance of the route storing these files. 
+In this certification test, 21 identical routes are started. Each route calls the RFC\_READ\_TABLE remote function module in SAP. These routes log and store in two time-stamped files (`request-<time-stamp>.xml` and `response-<time-stamp>.xml`) the request sent and the response received in their remote function call. The time-stamp indicates when the request was sent or when the response was received. In addition, each route posts in a time-stamped text file (`result-<time-stamp>.txt`) the contents of the RFCDOC table returned in their call. Each route stores these files in a route specific sub-directory of the Red Hat Fuse installation's `work` directory. A routes sub-directory is named `TEST_8_3-4_RFC_READ_TABLE-<n>` where `<n>` indicates the instance of the route storing these files. 
 
 System requirements
 -------------------
@@ -25,16 +21,16 @@ Before building and running this quick start you will need:
 
 * Maven 3.0.4 or higher
 * JDK 1.7 or 1.8
-* A JBoss Fuse 6.3 container not running with a Fabric
-* SAP JCo3 and IDoc3 libraries (sapjco3.jar, sapidoc3.jar and JCo native library for your OS platform)
+* A Red Hat Fuse 7.x container not running with a Fabric
+* SAP JCo3 and IDoc3 libraries (sapjco3.jar, sapidoc3.jar and JCo native library for your OS platform). 
 
 Configuring the Certification Test for your environment
 -------------------------------------------------------
 
 To configure the quick start for your environment: 
 
-1. Deploy the JCo3 library jar and native library (for your platform) and IDoc3 library jar to the `lib` folder of your JBoss Fuse installation.  
-2. In your JBoss Fuse installation, copy the `org.osgi.framework.system.packages.extra` property from the config properties file (`etc/config.properties`) to the custom properties file (`etc/custom.properties`) and append the following packages to the copied property:  
+1. Deploy the JCo3 library jar and native library (for your platform) and IDoc3 library jar to the `lib` folder of your Red Hat Fuse installation and the test   
+2. In your Red Hat Fuse installation, copy the `org.osgi.framework.system.packages.extra` property from the config properties file (`etc/config.properties`) to the custom properties file (`etc/custom.properties`) and append the following packages to the copied property:  
 
 > org.osgi.framework.system.packages.extra = \  
 >> ... \  
@@ -55,9 +51,9 @@ To build and run the quick start:
 
 1. Change your working directory to the `8_3-4_Performance_Load_And_Unicode_Test_Drive` directory.
 * Run `mvn clean install` to build the quick start.
-* In your JBoss Fuse installation directory run, `./bin/fuse` to start the JBoss Fuse runtime.
-* In the JBoss Fuse console, run `osgi:install -s mvn:org.fusesource/camel-sap` to install the JBoss Fuse SAP Camel component. Note the bundle number for the component bundle returned by this command.  
-* In the JBoss Fuse console, run `osgi:install -s mvn:org.jboss.fuse/Performance_Load_And_Unicode_Test_Drive` to install and run the certification test. Note the bundle number for the certification test returned by this command.  
+* In your Red Hat Fuse installation directory run, `./bin/fuse` to start the Red Hat Fuse runtime.
+* In the Red Hat Fuse console, run `osgi:install -s mvn:org.fusesource/camel-sap` to install the Red Hat Fuse SAP Camel component. Note the bundle number for the component bundle returned by this command.  
+* In the Red Hat Fuse console, run `osgi:install -s mvn:org.Red Hat.fuse/Performance_Load_And_Unicode_Test_Drive` to install and run the certification test. Note the bundle number for the certification test returned by this command.  
 
 Evaluating Certification Test Results  
 -------------------------------------  
@@ -87,9 +83,9 @@ That the SAP Camel Component can successfully post a document with Chinese UNICO
 Stopping and Uninstalling the Certification Test   
 ------------------------------------------------  
 
-To uninstall the certification test and stop the JBoss Fuse run-time perform the following in the JBoss Fuse console:  
+To uninstall the certification test and stop the Red Hat Fuse run-time perform the following in the Red Hat Fuse console:  
 
-1. Enter Ctrl-c to stop monitoring the JBoss Fuse log.
+1. Enter Ctrl-c to stop monitoring the Red Hat Fuse log.
 * Run `osgi:uninstall <certification-test-bundle-number>` providing the bundle number for the certification test bundle. 
 * Run `osgi:uninstall <camel-sap-bundle-number>` providing the bundle number for the component bundle. 
-* Run `osgi:shutdown -f` to shutdown the JBoss Fuse runtime.
+* Run `osgi:shutdown -f` to shutdown the Red Hat Fuse runtime.
