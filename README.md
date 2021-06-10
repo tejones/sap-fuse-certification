@@ -1,4 +1,3 @@
-# sap-fuse-certification
 SAP Certification Tests for Red Hat Fuse (camel-sap) 
 ================  
  **This directory contains two sets of tests for the SAP certification**  
