@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- JBoss, Home of Professional Open Source Copyright 2017, Red Hat, Inc. 
+	and/or its affiliates, and individual contributors by the @authors tag. See 
+	the copyright.txt in the distribution for a full listing of individual contributors. 
+	Licensed under the Apache License, Version 2.0 (the "License"); you may not 
+	use this file except in compliance with the License. You may obtain a copy 
+	of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	by applicable law or agreed to in writing, software distributed under the 
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
+	OF ANY KIND, either express or implied. See the License for the specific 
+	language governing permissions and limitations under the License. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>org.redhat.certification.fuse</groupId>
+	<version>7.7-fuse</version>
+	<artifactId>ALL_TESTS</artifactId>
+
+	<name>Spring Boot SAP Certification Tests</name>
+	<description>This runs all SAP certification tests for Function Modules.</description>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- dependency versions -->
+		<camel-sap-version>7.7.0.fuse-770013-redhat-00001</camel-sap-version>
+		<camel-version>2.23.2.fuse-770010-redhat-00001</camel-version> 
+		<slf4j-api-version>1.7.22</slf4j-api-version>
+		<slf4j-version>1.7.22</slf4j-version>
+		<log4j-version>1.2.17</log4j-version>
+		<sapjco3-version>3.1.2</sapjco3-version>
+		<sapidoc3-version>3.0.10</sapidoc3-version>
+		<!-- plugin versions -->
+		<maven-compiler-plugin-version>3.7.0</maven-compiler-plugin-version>
+		<maven-resources-plugin-version>3.0.2</maven-resources-plugin-version>
+		<camel-maven-plugin-version>2.21.0.fuse-710018-redhat-00001</camel-maven-plugin-version>
+		<maven-bundle-plugin-version>3.3.0</maven-bundle-plugin-version>
+		<build-helper-maven-plugin-version>3.0.0</build-helper-maven-plugin-version>
+		<fabric8-maven-plugin-version>3.5.26</fabric8-maven-plugin-version>
+
+		<!-- SAP Instance Configuration Configuration Parameters -->
+		<!-- *** Please enter the connection property values for your SAP Instance *** -->
+		<jco.client.ashost>***</jco.client.ashost>
+		<jco.client.sysnr>00</jco.client.sysnr>
+		<jco.client.client>100</jco.client.client>
+		<jco.client.gwhost>***</jco.client.gwhost>
+		<jco.client.gwserv>3300</jco.client.gwserv>
+		<jco.client.user>DEVELOPER</jco.client.user>
+		<jco.client.passwd>***</jco.client.passwd>
+		<jco.client.lang>en</jco.client.lang>
+		
+<!-- 		<jco.client.ashost>54.147.240.135</jco.client.ashost>
+		<jco.client.sysnr>00</jco.client.sysnr>
+		<jco.client.client>001</jco.client.client>
+		<jco.client.gwhost>54.147.240.135</jco.client.gwhost>
+		<jco.client.gwserv>3300</jco.client.gwserv>
+		<jco.client.user>DEVELOPER</jco.client.user>
+		<jco.client.passwd>R3dh4tsap</jco.client.passwd>
+		<jco.client.lang>en</jco.client.lang>
+ -->		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core-starter</artifactId>
+			<version>${camel-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>2.1.4.RELEASE-redhat-00001</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.1.4.RELEASE-redhat-00001</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring-boot-starter</artifactId>
+			<version>${camel-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource</groupId>
+			<artifactId>camel-sap-starter</artifactId>
+			<version>${camel-sap-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fusesource</groupId>
+			<artifactId>camel-sap</artifactId>
+			<version>${camel-sap-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		 <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        
+        	<!-- <dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j-version}</version>
+			</dependency> -->
+        
+        
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api-version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>ch.qos.logback</groupId>
+	        <artifactId>logback-classic</artifactId>
+	        <version>1.2.3</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>ch.qos.logback</groupId>
+	        <artifactId>logback-core</artifactId>
+	        <version>1.2.3</version>
+	    </dependency>
+
+		<dependency>
+			<groupId>com.sap.conn.jco</groupId>
+			<artifactId>sapjco3</artifactId>
+			<version>${sapjco3-version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/sapjco3.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.conn.idoc</groupId>
+			<artifactId>sapidoc3</artifactId>
+			<version>${sapidoc3-version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/sapidoc3.jar</systemPath>
+		</dependency>
+	</dependencies>
+	<build>
+		<defaultGoal>spring-boot:run</defaultGoal>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+
+	</build>
+</project>

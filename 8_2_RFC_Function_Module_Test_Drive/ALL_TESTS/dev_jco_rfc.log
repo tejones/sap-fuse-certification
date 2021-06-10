@@ -1,0 +1,23 @@
+
+**** Error file opened at 20210610 131136 Central Daylight Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Thu Jun 10 13:11:36,819<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+

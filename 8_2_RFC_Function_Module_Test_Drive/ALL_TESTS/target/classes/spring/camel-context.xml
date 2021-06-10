@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <!-- Here is an example route which builds a request to the GetList method 
+		of the FlightCustomer BAPI to retrieve the list of Flight Customers within 
+		an SAP System. The request is sent to SAP via a synchronous RFC endpoint 
+		to the BAPI method which also receives back a response containing the list 
+		of Flight Customers. -->
+    <camelContext id="camelContext-14ba479f-3004-4623-9bbe-369f6ad6d713" xmlns="http://camel.apache.org/schema/spring">
+        <route id="_route2">
+            <from id="_from1" uri="timer://init?repeatCount=1"/>
+            <to id="_to1" uri="bean:request0"/>
+            <log id="_log1" loggingLevel="INFO" message="${body}"/>
+            <to id="_to2" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_API_OBJTYPES"/>
+            <log id="_log2" loggingLevel="INFO" message="${body}"/>
+            <to id="_to3" uri="bean:request1"/>
+            <log id="_log3" loggingLevel="INFO" message="${body}"/>
+            <to id="_to4" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_ATTRIBUTES"/>
+            <log id="_log4" loggingLevel="INFO" message="${body}"/>
+            <to id="_to5" uri="bean:request2"/>
+            <log id="_log5" loggingLevel="INFO" message="${body}"/>
+            <to id="_to6" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_METHODS"/>
+            <log id="_log6" loggingLevel="INFO" message="${body}"/>
+            <to id="_to7" uri="bean:request3"/>
+            <log id="_log7" loggingLevel="INFO" message="${body}"/>
+            <to id="_to8" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_EVENTS"/>
+            <log id="_log8" loggingLevel="INFO" message="${body}"/>
+            <to id="_to9" uri="bean:request4"/>
+            <log id="_log9" loggingLevel="INFO" message="${body}"/>
+            <to id="_to10" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_PARAMETERS"/>
+            <log id="_log10" loggingLevel="INFO" message="${body}"/>
+            <to id="_to11" uri="bean:request5"/>
+            <log id="_log11" loggingLevel="INFO" message="${body}"/>
+            <to id="_to12" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_RETURNCODES"/>
+            <log id="_log12" loggingLevel="INFO" message="${body}"/>
+            <to id="_to13" uri="bean:request6"/>
+            <log id="_log13" loggingLevel="INFO" message="${body}"/>
+            <to id="_to14" uri="sap-srfc-destination:quickstartDest:DDIF_FIELDINFO_GET"/>
+            <log id="_log14" loggingLevel="INFO" message="${body}"/>
+            <to id="_to15" uri="bean:request7"/>
+            <log id="_log15" loggingLevel="INFO" message="${body}"/>
+            <to id="_to16" uri="sap-srfc-destination:quickstartDest:SWO_TYPE_INFO_GET"/>
+            <log id="_log16" loggingLevel="INFO" message="${body}"/>
+            <to id="_to17" uri="bean:request8"/>
+            <log id="_log17" loggingLevel="INFO" message="${body}"/>
+            <to id="_to18" uri="sap-srfc-destination:quickstartDest:SWO_CREATE"/>
+            <log id="_log18" loggingLevel="INFO" message="${body}"/>
+            <to id="_to39" uri="bean:request9"/>
+            <log id="_log39" loggingLevel="INFO" message="${body}"/>
+            <to id="_to40" uri="sap-srfc-destination:quickstartDest:SWO_INVOKE"/>
+            <log id="_log40" loggingLevel="INFO" message="${body}"/>
+            <to id="_to19" uri="bean:request10"/>
+            <log id="_log19" loggingLevel="INFO" message="${body}"/>
+            <to id="_to20" uri="sap-srfc-destination:quickstartDest:SWO_FREE"/>
+            <log id="_log20" loggingLevel="INFO" message="${body}"/>
+            <to id="_to21" uri="bean:request11"/>
+            <log id="_log21" loggingLevel="INFO" message="${body}"/>
+            <to id="_to22" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_API_OBJTYPES"/>
+            <log id="_log22" loggingLevel="INFO" message="${body}"/>
+            <to id="_to23" uri="bean:request12"/>
+            <log id="_log23" loggingLevel="INFO" message="${body}"/>
+            <to id="_to24" uri="sap-srfc-destination:quickstartDest:SWO_OBJECT_ID_GET"/>
+            <log id="_log24" loggingLevel="INFO" message="${body}"/>
+            <to id="_to25" uri="bean:request13"/>
+            <log id="_log25" loggingLevel="INFO" message="${body}"/>
+            <to id="_to26" uri="sap-srfc-destination:quickstartDest:SWO_OBJECT_ID_SET"/>
+            <log id="_log26" loggingLevel="INFO" message="${body}"/>
+            <to id="_to27" uri="bean:request14"/>
+            <log id="_log27" loggingLevel="INFO" message="${body}"/>
+            <to id="_to28" uri="sap-srfc-destination:quickstartDest:SWO_SET_ENVIRONMENT"/>
+            <log id="_log28" loggingLevel="INFO" message="${body}"/>
+            <to id="_to29" uri="bean:request15"/>
+            <log id="_log29" loggingLevel="INFO" message="${body}"/>
+            <to id="_to30" uri="sap-srfc-destination:quickstartDest:RFC_FUNCTION_DOCU_GET"/>
+            <log id="_log30" loggingLevel="INFO" message="${body}"/>
+            <to id="_to41" uri="bean:request16"/>
+            <log id="_log41" loggingLevel="INFO" message="${body}"/>
+            <to id="_to42" uri="sap-srfc-destination:quickstartDest:RPY_BOR_TREE_INIT"/>
+            <log id="_log42" loggingLevel="INFO" message="${body}"/>
+            <to id="_to43" uri="bean:request17"/>
+            <log id="_log43" loggingLevel="INFO" message="${body}"/>
+            <to id="_to44" uri="sap-srfc-destination:quickstartDest:RPY_BOR_TREE_EXPAND"/>
+            <log id="_log44" loggingLevel="INFO" message="${body}"/>
+            <to id="_to31" uri="bean:request18"/>
+            <log id="_log31" loggingLevel="INFO" message="${body}"/>
+            <to id="_to32" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_OBJTYPE_INFO"/>
+            <log id="_log32" loggingLevel="INFO" message="${body}"/>
+            <to id="_to33" uri="bean:request20"/>
+            <log id="_log33" loggingLevel="INFO" message="${body}"/>
+            <to id="_to34" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_OBJTYPE_DOCU"/>
+            <log id="_log34" loggingLevel="INFO" message="${body}"/>
+            <to id="_to35" uri="bean:request21"/>
+            <log id="_log35" loggingLevel="INFO" message="${body}"/>
+            <to id="_to36" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_BASEDATA"/>
+            <log id="_log36" loggingLevel="INFO" message="${body}"/>
+            <to id="_to37" uri="bean:request22"/>
+            <log id="_log37" loggingLevel="INFO" message="${body}"/>
+            <to id="_to38" uri="sap-srfc-destination:quickstartDest:SWO_QUERY_KEYFIELDS"/>
+            <log id="_log38" loggingLevel="INFO" message="${body}"/>
+        </route>
+    </camelContext>
+    <!-- Instantiates a processor bean which builds a request to the GetList 
+		method of the FlightCustomer BAPI and sets that request in the body of the 
+		exchange's message. -->
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_1_SWO_QUERY_OBJTYPES.CreateRequest" id="request0"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_10_SWO_QUERY_ATTRIBUTES.CreateRequest" id="request1"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_11_SWO_QUERY_METHODS.CreateRequest" id="request2"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_12_SWO_QUERY_EVENTS.CreateRequest" id="request3"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_13_SWO_QUERY_PARAMETERS.CreateRequest" id="request4"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_14_SWO_QUERY_RETURNCODES.CreateRequest" id="request5"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_15_DDIF_FIELDINFO_GET.CreateRequest" id="request6"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_16_SWO_TYPE_INFO_GET.CreateRequest" id="request7"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_17_SWO_CREATE.CreateRequest" id="request8"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_18_SWO_INVOKE.CreateRequest" id="request9"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_19_SWO_FREE.CreateRequest" id="request10"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_2_SWO_QUERY_API_OBJTYPES.CreateRequest" id="request11"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_20_SWO_OBJECT_ID_GET.CreateRequest" id="request12"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_21_SWO_OBJECT_ID_SET.CreateRequest" id="request13"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_22_SWO_SET_ENVIRONMENT.CreateRequest" id="request14"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_23_RFC_FUNCTION_DOCU_GET.CreateRequest" id="request15"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_3_RPY_BOR_TREE_INIT.CreateRequest" id="request16"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_4_RPY_BOR_TREE_EXPAND.CreateRequest" id="request17"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_5_SWO_QUERY_OBJTYPE_INFO.CreateRequest" id="request18"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_6_SWO_QUERY_OBJTYPE_INFOS.CreateRequest" id="request19"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_7_SWO_QUERY_OBJTYPE_DOCU.CreateRequest" id="request20"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_8_SWO_QUERY_BASEDATA.CreateRequest" id="request21"/>
+    <bean
+        class="org.redhat.certification.fuse.TEST_8_2_9_SWO_QUERY_KEYFIELDS.CreateRequest" id="request22"/>
+</beans>

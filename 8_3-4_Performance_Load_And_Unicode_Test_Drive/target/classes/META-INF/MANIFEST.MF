@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1607377502656
+Build-Jdk-Spec: 11
+Bundle-Blueprint: OSGI-INF/blueprint/camel-context.xml
+Bundle-ManifestVersion: 2
+Bundle-Name: Performance_Load_And_Unicode_Test_Drive
+Bundle-SymbolicName: Performance_Load_And_Unicode_Test_Drive
+Bundle-Version: 7.7.0.fuse
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.redhat.fuse.unicode.test;uses:="org.apache.camel";ve
+ rsion="7.7.0"
+Import-Package: org.apache.camel;version="[2.21,3)",org.fusesource.camel
+ .component.sap;version="[7.7,8)",org.fusesource.camel.component.sap.mod
+ el.rfc;version="[7.7,8)",org.fusesource.camel.component.sap.model.rfc.i
+ mpl;version="[7.7,8)",org.osgi.service.blueprint;version="[1.0.0,2.0.0)
+ "
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Tool: Bnd-5.1.1.202006162103

@@ -1,0 +1,190 @@
+385  [main] INFO  o.j.q.f.T.Application - Starting Application on localhost with PID 81268 (/home/tejones/apps/development/repos/sap-fuse-certification/8_2_RFC_Function_Module_Test_Drive/ALL_TESTS/target/classes started by tejones in /home/tejones/apps/development/repos/sap-fuse-certification/8_2_RFC_Function_Module_Test_Drive/ALL_TESTS)
+387  [main] INFO  o.j.q.f.T.Application - No active profile set, falling back to default profiles: default
+1468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$a25df98c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+1666 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+1675 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+1683 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+1684 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+1741 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+1741 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1323 ms
+1887 [main] INFO  o.a.c.i.c.DefaultTypeConverter - Type converters loaded (core: 195, classpath: 31)
+2019 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2451 [main] INFO  o.a.c.spring.boot.RoutesCollector - Loading additional Camel XML routes from: classpath:camel/*.xml
+2451 [main] INFO  o.a.c.spring.boot.RoutesCollector - Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2454 [main] INFO  o.a.camel.spring.SpringCamelContext - Apache Camel 2.23.2.fuse-770010-redhat-00001 (CamelContext: camelContext-14ba479f-3004-4623-9bbe-369f6ad6d713) is starting
+2454 [main] INFO  o.a.c.m.ManagedManagementStrategy - JMX is enabled
+2738 [main] INFO  o.a.camel.spring.SpringCamelContext - Apache Camel 2.23.2.fuse-770010-redhat-00001 (CamelContext: camelContext-14ba479f-3004-4623-9bbe-369f6ad6d713) is shutting down
+2744 [main] INFO  o.a.camel.spring.SpringCamelContext - Apache Camel 2.23.2.fuse-770010-redhat-00001 (CamelContext: camelContext-14ba479f-3004-4623-9bbe-369f6ad6d713) uptime 0.289 seconds
+2745 [main] INFO  o.a.camel.spring.SpringCamelContext - Apache Camel 2.23.2.fuse-770010-redhat-00001 (CamelContext: camelContext-14ba479f-3004-4623-9bbe-369f6ad6d713) is shutdown in 0.007 seconds
+2746 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2755 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2759 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.apache.camel.RuntimeCamelException: org.apache.camel.FailedToCreateRouteException: Failed to create route _route2 at: >>> To[sap-srfc-destination:quickstartDest:SWO_QUERY_API_OBJTYPES] <<< in route: Route(_route2)[[From[timer://init?repeatCount=1]] -> [To[bea... because of Failed to resolve endpoint: sap-srfc-destination://quickstartDest:SWO_QUERY_API_OBJTYPES due to: Initialization of repository destination quickstartDest failed: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	at org.apache.camel.util.ObjectHelper.wrapRuntimeCamelException(ObjectHelper.java:1826)
+	at org.apache.camel.spring.SpringCamelContext.start(SpringCamelContext.java:136)
+	at org.apache.camel.spring.CamelContextFactoryBean.start(CamelContextFactoryBean.java:370)
+	at org.apache.camel.spring.CamelContextFactoryBean.onApplicationEvent(CamelContextFactoryBean.java:417)
+	at org.apache.camel.spring.CamelContextFactoryBean.onApplicationEvent(CamelContextFactoryBean.java:95)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:896)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at org.jboss.quickstarts.fuse.TEST_8_2_1_SWO_QUERY_OBJTYPES.Application.main(Application.java:32)
+Caused by: org.apache.camel.FailedToCreateRouteException: Failed to create route _route2 at: >>> To[sap-srfc-destination:quickstartDest:SWO_QUERY_API_OBJTYPES] <<< in route: Route(_route2)[[From[timer://init?repeatCount=1]] -> [To[bea... because of Failed to resolve endpoint: sap-srfc-destination://quickstartDest:SWO_QUERY_API_OBJTYPES due to: Initialization of repository destination quickstartDest failed: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	at org.apache.camel.model.RouteDefinition.addRoutes(RouteDefinition.java:1352)
+	at org.apache.camel.model.RouteDefinition.addRoutes(RouteDefinition.java:212)
+	at org.apache.camel.impl.DefaultCamelContext.startRoute(DefaultCamelContext.java:1140)
+	at org.apache.camel.impl.DefaultCamelContext.startRouteDefinitions(DefaultCamelContext.java:3735)
+	at org.apache.camel.impl.DefaultCamelContext.doStartCamel(DefaultCamelContext.java:3440)
+	at org.apache.camel.impl.DefaultCamelContext$4.call(DefaultCamelContext.java:3248)
+	at org.apache.camel.impl.DefaultCamelContext$4.call(DefaultCamelContext.java:3244)
+	at org.apache.camel.impl.DefaultCamelContext.doWithDefinedClassLoader(DefaultCamelContext.java:3267)
+	at org.apache.camel.impl.DefaultCamelContext.doStart(DefaultCamelContext.java:3244)
+	at org.apache.camel.support.ServiceSupport.start(ServiceSupport.java:72)
+	at org.apache.camel.impl.DefaultCamelContext.start(DefaultCamelContext.java:3160)
+	at org.apache.camel.spring.SpringCamelContext.start(SpringCamelContext.java:133)
+	... 18 common frames omitted
+Caused by: org.apache.camel.ResolveEndpointFailedException: Failed to resolve endpoint: sap-srfc-destination://quickstartDest:SWO_QUERY_API_OBJTYPES due to: Initialization of repository destination quickstartDest failed: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	at org.apache.camel.impl.DefaultCamelContext.getEndpoint(DefaultCamelContext.java:753)
+	at org.apache.camel.util.CamelContextHelper.getMandatoryEndpoint(CamelContextHelper.java:80)
+	at org.apache.camel.model.RouteDefinition.resolveEndpoint(RouteDefinition.java:227)
+	at org.apache.camel.impl.DefaultRouteContext.resolveEndpoint(DefaultRouteContext.java:116)
+	at org.apache.camel.impl.DefaultRouteContext.resolveEndpoint(DefaultRouteContext.java:122)
+	at org.apache.camel.model.SendDefinition.resolveEndpoint(SendDefinition.java:62)
+	at org.apache.camel.model.SendDefinition.createProcessor(SendDefinition.java:56)
+	at org.apache.camel.model.ProcessorDefinition.makeProcessorImpl(ProcessorDefinition.java:569)
+	at org.apache.camel.model.ProcessorDefinition.makeProcessor(ProcessorDefinition.java:530)
+	at org.apache.camel.model.ProcessorDefinition.addRoutes(ProcessorDefinition.java:240)
+	at org.apache.camel.model.RouteDefinition.addRoutes(RouteDefinition.java:1349)
+	... 29 common frames omitted
+Caused by: com.sap.conn.jco.JCoException: Initialization of repository destination quickstartDest failed: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	at com.sap.conn.jco.rt.RfcDestination.getSystemID(RfcDestination.java:1177)
+	at com.sap.conn.jco.rt.RepositoryManager.getRepository(RepositoryManager.java:28)
+	at com.sap.conn.jco.rt.RfcDestination.initRepository(RfcDestination.java:1122)
+	at com.sap.conn.jco.rt.RfcDestination.getRepository(RfcDestination.java:1276)
+	at com.sap.conn.jco.rt.RfcDestination.getRepository(RfcDestination.java:36)
+	at org.fusesource.camel.component.sap.SapRfcDestinationEndpoint.createRequest(SapRfcDestinationEndpoint.java:110)
+	at org.fusesource.camel.component.sap.SapSynchronousRfcDestinationComponent.createEndpoint(SapSynchronousRfcDestinationComponent.java:64)
+	at org.apache.camel.impl.DefaultComponent.createEndpoint(DefaultComponent.java:126)
+	at org.apache.camel.impl.DefaultCamelContext.getEndpoint(DefaultCamelContext.java:706)
+	... 39 common frames omitted
+Caused by: com.sap.conn.jco.JCoException: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc.generateJCoException(MiddlewareJavaRfc.java:437)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1176)
+	at com.sap.conn.jco.rt.ClientConnection.connect(ClientConnection.java:713)
+	at com.sap.conn.jco.rt.RepositoryConnection.connect(RepositoryConnection.java:70)
+	at com.sap.conn.jco.rt.PoolingFactory.init(PoolingFactory.java:117)
+	at com.sap.conn.jco.rt.ConnectionManager.createFactory(ConnectionManager.java:441)
+	at com.sap.conn.jco.rt.DefaultConnectionManager.createFactory(DefaultConnectionManager.java:24)
+	at com.sap.conn.jco.rt.ConnectionManager.getFactory(ConnectionManager.java:391)
+	at com.sap.conn.jco.rt.RfcDestination.getSystemID(RfcDestination.java:1168)
+	... 47 common frames omitted
+Caused by: com.sap.conn.rfc.exceptions.RfcException: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=*** SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname '***' unknown
+TIME        Thu Jun 10 13:11:36 2021
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      /bas/753_REL/src/base/ni/niuxi.c
+LINE        1773
+DETAIL      NiPGetHostByName: '***' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	at com.sap.conn.rfc.engine.RfcIoControl.error_end(RfcIoControl.java:207)
+	at com.sap.conn.rfc.engine.RfcIoControl.ab_rfcopen(RfcIoControl.java:97)
+	at com.sap.conn.rfc.api.RfcApi.RfcOpen(RfcApi.java:71)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1140)
+	... 54 common frames omitted
+2763 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

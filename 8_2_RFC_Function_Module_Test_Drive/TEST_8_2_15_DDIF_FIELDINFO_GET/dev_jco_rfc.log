@@ -1,0 +1,125 @@
+
+**** Error file opened at 20200114 130714 Central Standard Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Tue Jan 14 13:07:14,210<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=52.44.248.23 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '52.44.248.23:3300' not reached
+TIME        Tue Jan 14 13:07:14 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/753_REL/src/base/ni/nibuf.cpp
+LINE        4568
+DETAIL      NiBufIConnect: connection pending after 60000ms
+SYSTEM CALL connect
+ERRNO       115
+ERRNO TEXT  Operation now in progress
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200114 132457 Central Standard Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Tue Jan 14 13:24:57,574<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=52.44.248.23 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '52.44.248.23:3300' not reached
+TIME        Tue Jan 14 13:24:57 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/753_REL/src/base/ni/nibuf.cpp
+LINE        4568
+DETAIL      NiBufIConnect: connection pending after 60000ms
+SYSTEM CALL connect
+ERRNO       115
+ERRNO TEXT  Operation now in progress
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200115 144717 Central Standard Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Wed Jan 15 14:47:17,265<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=52.44.248.23 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '52.44.248.23:3300' not reached
+TIME        Wed Jan 15 14:47:17 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/753_REL/src/base/ni/nibuf.cpp
+LINE        4568
+DETAIL      NiBufIConnect: connection pending after 60000ms
+SYSTEM CALL connect
+ERRNO       115
+ERRNO TEXT  Operation now in progress
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200115 153921 Central Standard Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Wed Jan 15 15:39:21,136<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=52.5.52.251 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '52.5.52.251:3300' not reached
+TIME        Wed Jan 15 15:39:21 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/753_REL/src/base/ni/nibuf.cpp
+LINE        4568
+DETAIL      NiBufIConnect: connection pending after 60000ms
+SYSTEM CALL connect
+ERRNO       115
+ERRNO TEXT  Operation now in progress
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200115 155436 Central Standard Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Wed Jan 15 15:54:36,815<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=quickstartDest ASHOST=52.5.52.251 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '52.5.52.251:3300' not reached
+TIME        Wed Jan 15 15:54:36 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3449
+DETAIL      NiPConnect2: 52.5.52.251:3300
+SYSTEM CALL connect
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
