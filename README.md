@@ -4,28 +4,15 @@ SAP Certification Tests for Red Hat Fuse (camel-sap)
  
 ***  
 Summary: These are the required tests for SAP certification with SAP ECC and S/4HANA.       
-Target Product: Fuse  
+Target Product: Red Hat Fuse  
 ***  
 
 Overview  
 --------  
 
-The Fuse SAP certification tests are divided into two folders. The 8_2_RFC_Function_Module_Test_Drive folder has tests designed to validate the solution supports a completes set of data type structures coming from SAP. They can be run individually or all at once using the ALL_TESTS folder. These tests use Spring Boot to deploy and execute the tests with the results written to file and the console.
+The Red Hat Fuse SAP Certification tests are divided into two folders. The 8_2_RFC_Function_Module_Test_Drive folder has tests designed to validate the solution supports a completes set of data type structures coming from SAP. They can be run individually or all at once using the ALL_TESTS folder. These tests use Spring Boot to deploy and execute the tests with the results written to file and the console.
 
-The 8_3-4_Performance_Load_And_Unicode_Test_Drive folder contains tests that check for load and unicode support. These test require a Karaf server 
-
-###[8_2_RFC_Function_Module_Test_Drive](8_2_RFC_Function_Module_Test_Drive/README.md)  
-
-The tests in this directory demonstrate how to configure.
-
-
-###[Fuse](fuse/README.md)  
-
-The quick starts in this directory demonstrates how to configure, deploy and run the JBoss Fuse SAP Camel components in a JBoss Fuse OSGi container runtime.
-
-###[Spring Boot](spring-boot/README.md)  
-
-The quick starts in this directory demonstrates how to configure, deploy and run the JBoss Fuse SAP Camel components in a Spring Boot Camel container runtime.
+The 8_3-4_Performance_Load_And_Unicode_Test_Drive folder contains tests that check for load and unicode support. These test require a Karaf server.
 
 -----
 For more information see:
